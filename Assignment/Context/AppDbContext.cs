@@ -15,13 +15,15 @@ namespace Assignment.Context
         {
             modelBuilder.Entity<Course>().HasKey(C => C.Id);
             modelBuilder.Entity<Course>().Property(C => C.Name).HasMaxLength(50).IsRequired();
-            modelBuilder.Entity<Department>().HasKey(D=>D.Id);
-            modelBuilder.Entity<Department>().Property(D=>D.Name).HasMaxLength(50).IsRequired();
+            modelBuilder.Entity<Department>().HasKey(D => D.Id);
+            modelBuilder.Entity<Department>().Property(D => D.Name).HasMaxLength(50).IsRequired();
+
+            //modelBuilder.Entity<Student>().HasOne(D=>D.D)
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server =.;Database = AppG03;Trusted_Connection = True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server =.;Database = AppG04;Trusted_Connection = True;TrustServerCertificate=True");
         }
 
         
